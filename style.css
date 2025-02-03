@@ -310,3 +310,153 @@ ul {
 ul li {
     margin-bottom: 10px;
 }
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #f8b400 !important;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero {
+    height: 100vh;
+    background: url('/photos/Screenshot_20241031-165607~2.png') center/cover fixed no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+/* Ευθυγράμμιση κουμπιού κάτω από το Portfolio */
+.navbar .d-flex {
+    align-items: center;
+}
+
+/* Στυλ για το κουμπί Dark Mode */
+.toggle-dark-mode {
+    background: #f8b400;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px; /* Δημιουργεί κενό κάτω από το Portfolio */
+    transition: background 0.3s, transform 0.2s;
+}
+
+.toggle-dark-mode:hover {
+    background: #d39e00;
+    transform: scale(1.1);
+}
+
+/* Responsive - Κεντράρισμα κουμπιού σε μικρές οθόνες */
+@media (max-width: 768px) {
+    .navbar .d-flex {
+        align-items: center;
+        text-align: center;
+    }
+
+    .toggle-dark-mode {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
