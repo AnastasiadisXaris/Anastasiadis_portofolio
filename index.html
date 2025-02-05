@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Αναστασιάδης Θεοχάρης</title>
+    <link rel="icon" type="image/x-icon" href="./photos/machine-learning.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -13,72 +14,146 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <div class="d-flex flex-column">
-                    <a class="navbar-brand" href="index.html">Αναστασιάδης Θεοχάρης</a>
-                    <button class="toggle-dark-mode">🌙 Dark Mode</button>
+                <div class="d-flex align-items-center">
+                    <img src="./photos/machine-learning.png" alt="Logo" class="dark-mode-icon me-2" style="height: 40px;">
+                    <a class="navbar-brand mb-0" href="index.html">Αναστασιάδης Θεοχάρης</a>
                 </div>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Κάποια στοιχεία για εμένα</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="sectionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Ενότητες
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="sectionsDropdown">
-                                <li><a class="dropdown-item" href="https://xaris75.github.io/Learn_Python_app/">Python Playground</a></li>
-                                <li><a class="dropdown-item" href="marketing.html">Marketing</a></li>
-                                <li><a class="dropdown-item" href="data-science.html">Data Science</a></li>
-                                <li><a class="dropdown-item" href="ai.html">AI</a></li>
+                                <li><a class="dropdown-item" href="https://xaris75.github.io/Learn_Python_app/">Κόσμος της Python</a></li>
+                                <li><a class="dropdown-item" href="marketing.html">Ψηφιακό Μάρκετινγκ</a></li>
+                                <li><a class="dropdown-item" href="data-science.html">Επιστήμη των Δεδομένων</a></li>
+                                <li><a class="dropdown-item" href="ai.html">Τεχνητή Νοημοσύνη</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Επικοινωνία</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    
-    
-    
 
     <main>
-        <section class="hero text-center text-white d-flex align-items-center justify-content-center" style="background-image: url('assets/images/hero.jpg'); height: 400px; background-size: cover; background-position: center;">
-            <div class="container">
+        <section class="hero">
+            <div class="content">
+                <img src="/photos/portofolio (1).png" alt="Portfolio" class="hero-img">
                 <h1 class="animate__animated animate__fadeInDown">Καλωσήρθατε στο Portfolio μου</h1>
-                <p class="animate__animated animate__fadeInUp">Explore my work in Python, AI, Data Science, and Marketing</p>
-                <a href="https://xaris75.github.io/Learn_Python_app/" class="btn btn-primary btn-lg">Start Learning Python</a>
+                <p class="animate__animated animate__fadeInUp"><b>Explore my work in Python, AI, Data Science, and Digital Marketing</b></p>
+                <a href="https://xaris75.github.io/Learn_Python_app/" class="btn btn-primary btn-lg">Ξεκινήστε την εκμάθησης σας στην Python</a>
             </div>
         </section>
         
         <section class="container my-5">
             <div class="row text-center">
+                <!-- Πρώτη Σειρά -->
                 <div class="col-md-4">
                     <i class="fas fa-code fa-3x text-primary mb-3"></i>
                     <h3>Python Programming</h3>
-                    <p>Discover tutorials, interactive lessons, and projects to sharpen your Python skills.</p>
+                    <p>Ανακαλύψτε το εκπαιδευτικό υλικό, διαδραστικά μαθήματα και περιβάλλον εξάσκσησης για να βελτιώσετε τις δεξιότητές σας στην Python.</p>
                 </div>
                 <div class="col-md-4">
                     <i class="fas fa-chart-bar fa-3x text-success mb-3"></i>
                     <h3>Data Science</h3>
-                    <p>Learn how to analyze data, create visualizations, and make data-driven decisions.</p>
+                    <p>Μάθετε πώς να αναλύετε τα δεδομένα, να δημιουργείτε οπτικοποιήσεις και να λαμβάνετε αποφάσεις βάσει δεδομένων.</p>
                 </div>
                 <div class="col-md-4">
                     <i class="fas fa-brain fa-3x text-warning mb-3"></i>
                     <h3>Artificial Intelligence</h3>
-                    <p>Explore the power of AI, from machine learning to neural networks.</p>
+                    <p>Εξερευνήστε τη δύναμη της τεχνητής νοημοσύνης, από τη μηχανική μάθηση έως τα νευρωνικά δίκτυα.</p>
                 </div>
             </div>
+        
+            <!-- Δεύτερη Σειρά: Digital Marketing στο Κέντρο -->
+            <div class="row text-center mt-4">
+                <div class="col-md-4"></div> <!-- Κενό για στοίχιση στο κέντρο -->
+                <div class="col-md-4">
+                    <i class="fas fa-bullhorn fa-3x text-danger mb-3"></i>
+                    <h3>Digital Marketing</h3>
+                    <p>Κατακτήστε στρατηγικές στο SEO, τα μέσα κοινωνικής δικτύωσης και τη διαδικτυακή διαφήμιση για να αυξήσετε την ψηφιακή σας παρουσία.</p>
+                </div>
+                <div class="col-md-4"></div> <!-- Κενό για στοίχιση στο κέντρο -->
+            </div>
         </section>
+        
     </main>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>© 2025 Anastasiadis. All rights reserved.</p>
-        <p><a href="contact.html" class="text-white">Contact Me</a></p>
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <!-- Στήλη: Πληροφορίες -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">ΑΝΑΣΤΑΣΙΑΔΗΣ ΘΕΟΧΑΡΗΣ</h5>
+                    <p>Εξερεύνησε τον κόσμο της Python, της Τεχνητής Νοημοσύνης και του Digital Marketing μέσα από το προσωπικό μου portfolio.</p>
+                </div>
+    
+                <!-- Στήλη: Γρήγορη Πλοήγηση -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">ΓΡΗΓΟΡΗ ΠΛΟΗΓΗΣΗ</h5>
+                    <p><a href="about.html" class="text-white text-decoration-none">Σχετικά με Εμένα</a></p>
+                    <p><a href="projects.html" class="text-white text-decoration-none">Projects</a></p>
+                    <p><a href="blog.html" class="text-white text-decoration-none">Blog</a></p>
+                    <p><a href="contact.html" class="text-white text-decoration-none">Επικοινωνία</a></p>
+                </div>
+    
+                <!-- Στήλη: Επικοινωνία -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">ΕΠΙΚΟΙΝΩΝΙΑ</h5>
+                    <p><i class="fas fa-home mr-3"></i> Κατερίνη - Πιερία, Ελλάδα</p>
+                    <p><i class="fas fa-envelope mr-3"></i> theoxarisanastasiadis9@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +30 6949612978</p>
+                </div>
+    
+                <!-- Στήλη: Newsletter -->
+                <div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Newsletter</h5>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Το email σου" aria-label="Recipient's email">
+                            <button class="btn btn-info" type="submit">Εγγραφή</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Κοινωνικά Δίκτυα -->
+            <!-- Κοινωνικά Δίκτυα -->
+<div class="text-center mt-4">
+    <a href="https://www.facebook.com/Mirmidonas" class="text-white me-4" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook fa-lg"></i>
+    </a>
+    <a href="https://www.instagram.com/_anastasiadisxaris/" class="text-white me-4" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram fa-lg"></i>
+    </a>
+    <a href="https://x.com/MmaAcademy2" class="text-white me-4" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitter fa-lg"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/theoxaris-anastasiadis-ba69a8121/" class="text-white me-4" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin fa-lg"></i>
+    </a>
+    <a href="https://github.com/Xaris75" class="text-white me-4" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github fa-lg"></i>
+    </a>
+    
+</div>
+
+    
+            <!-- Υποσέλιδο -->
+            <div class="text-center py-3 border-top mt-4">
+                <p>© 2025 Αναστασιάδης Θεοχάρης. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -135,17 +210,6 @@
             reveal();
         });
     </script>
-    <script>
-        const toggleButton = document.querySelector(".toggle-dark-mode");
-        toggleButton.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            if (document.body.classList.contains("dark-mode")) {
-                toggleButton.textContent = "☀️ Light Mode";
-            } else {
-                toggleButton.textContent = "🌙 Dark Mode";
-            }
-        });
-    </script>
-        
+
 </body>
 </html>

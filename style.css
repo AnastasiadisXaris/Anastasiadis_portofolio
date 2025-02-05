@@ -42,11 +42,18 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
+
+.dark-mode-icon {
+    width: 40px; /* ή όποιο μέγεθος σου ταιριάζει */
+    height: auto;
+    margin-top: 5px;
+}
+
 
 .hero {
     position: relative;
@@ -159,14 +166,7 @@ ul li {
     display: none;
 }
 
-/* General Page Style */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 header {
     background: #333;
@@ -270,14 +270,92 @@ main {
     text-decoration: underline;
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #333;
+    background-color: #212529;
     color: #fff;
-    margin-top: 20px;
+    padding: 40px 0;
+    position: relative;
+    font-size: 0.9rem;
 }
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-links,
+.footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 10px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: #f8f9fa;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #0d6efd;
+    transform: scale(1.2);
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 8px;
+    width: 70%;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.footer-newsletter button {
+    padding: 8px 15px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #0b5ed7;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+}
+
 
 /* General Page Style */
 .page-title {
@@ -322,7 +400,7 @@ ul li {
 }
 
 .navbar-brand {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', serif;
     font-size: 1.5rem;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
@@ -371,21 +449,28 @@ ul li {
     transform: translateY(0);
 }
 .hero {
-    height: 100vh;
-    background: url('/photos/Screenshot_20241031-165607~2.png') center/cover fixed no-repeat;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     text-align: center;
-    font-size: 1.5rem;
+    color: white;
+    background-color: #eae2b7; /* Προαιρετικό */
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+.hero .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.hero-img {
+    max-width: 40%;  /* Προσαρμόζει την εικόνα στο 40% του πλάτους */
+    max-height: 150px; /* Ορίζει το μέγιστο ύψος */
+    object-fit: contain; /* Διατηρεί τις αναλογίες */
+    margin-bottom: 20px;
+}
+
 .card {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -431,23 +516,6 @@ ul li {
     align-items: center;
 }
 
-/* Στυλ για το κουμπί Dark Mode */
-.toggle-dark-mode {
-    background: #f8b400;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 5px; /* Δημιουργεί κενό κάτω από το Portfolio */
-    transition: background 0.3s, transform 0.2s;
-}
-
-.toggle-dark-mode:hover {
-    background: #d39e00;
-    transform: scale(1.1);
-}
-
 /* Responsive - Κεντράρισμα κουμπιού σε μικρές οθόνες */
 @media (max-width: 768px) {
     .navbar .d-flex {
@@ -460,3 +528,4 @@ ul li {
         margin-top: 10px;
     }
 }
+
