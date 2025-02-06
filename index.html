@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Αναστασιάδης Θεοχάρης</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Το προσωπικό portfolio του Αναστασιάδη Θεοχάρη. Μάθετε για Python, AI, Data Science και Digital Marketing.">
+    <meta name="description" content="Το προσωπικό portfolio του Αναστασιάδη Θεοχάρη. Μάθετε για Python, AI, Data Science, Web Development και Digital Marketing.">
     <meta name="keywords" content="Python, AI, Data Science, Digital Marketing, Αναστασιάδης Θεοχάρης, Machine Learning, Portfolio">
     <meta name="author" content="Αναστασιάδης Θεοχάρης">
     
@@ -98,7 +98,7 @@
             <div class="content">
                 <img src="./photos/portofolio (1).png" alt="Portfolio" class="hero-img">
                 <h1 class="animate__animated animate__fadeInDown">Καλωσήρθατε στο Portfolio μου</h1>
-                <p class="animate__animated animate__fadeInUp"><b>Explore my work in Python, AI, Data Science, and Digital Marketing</b></p>
+                <p class="animate__animated animate__fadeInUp"><b>Explore my work in Python, AI, Data Science, Web Development and Digital Marketing</b></p>
                 <a href="https://xaris75.github.io/Learn_Python_app/" class="btn btn-primary btn-lg">Ξεκινήστε την εκμάθησης σας στην Python</a>
             </div>
         </section>
@@ -109,7 +109,7 @@
                 <div class="col-md-4">
                     <i class="fas fa-code fa-3x text-primary mb-3"></i>
                     <h3>Python Programming</h3>
-                    <p>Ανακαλύψτε το εκπαιδευτικό υλικό, διαδραστικά μαθήματα και περιβάλλον εξάσκσησης για να βελτιώσετε τις δεξιότητές σας στην Python.</p>
+                    <p>Ανακαλύψτε το εκπαιδευτικό υλικό, διαδραστικά μαθήματα και περιβάλλον εξάσκησης για να βελτιώσετε τις δεξιότητές σας στην Python.</p>
                 </div>
                 <div class="col-md-4">
                     <i class="fas fa-chart-bar fa-3x text-success mb-3"></i>
@@ -123,15 +123,18 @@
                 </div>
             </div>
         
-            <!-- Δεύτερη Σειρά: Digital Marketing στο Κέντρο -->
+            <!-- Δεύτερη Σειρά -->
             <div class="row text-center mt-4">
-                <div class="col-md-4"></div> <!-- Κενό για στοίχιση στο κέντρο -->
-                <div class="col-md-4">
+                <div class="col-md-6">
+                    <i class="fas fa-laptop-code fa-3x text-info mb-3"></i>
+                    <h3>Web Development</h3>
+                    <p>Μάθετε να δημιουργείτε δυναμικές και διαδραστικές ιστοσελίδες με HTML, CSS και JavaScript.</p>
+                </div>
+                <div class="col-md-6">
                     <i class="fas fa-bullhorn fa-3x text-danger mb-3"></i>
                     <h3>Digital Marketing</h3>
                     <p>Κατακτήστε στρατηγικές στο SEO, τα μέσα κοινωνικής δικτύωσης και τη διαδικτυακή διαφήμιση για να αυξήσετε την ψηφιακή σας παρουσία.</p>
                 </div>
-                <div class="col-md-4"></div> <!-- Κενό για στοίχιση στο κέντρο -->
             </div>
         </section>
         
@@ -143,7 +146,7 @@
                 <!-- Στήλη: Πληροφορίες -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-info">ΑΝΑΣΤΑΣΙΑΔΗΣ ΘΕΟΧΑΡΗΣ</h5>
-                    <p>Εξερεύνησε τον κόσμο της Python, της Τεχνητής Νοημοσύνης και του Digital Marketing μέσα από το προσωπικό μου portfolio.</p>
+                    <p>Εξερεύνησε τον κόσμο της Python, της Τεχνητής Νοημοσύνης, του Web Development και του Digital Marketing μέσα από το προσωπικό μου portfolio.</p>
                 </div>
     
                 <!-- Στήλη: Γρήγορη Πλοήγηση -->
@@ -163,17 +166,50 @@
                     <p><i class="fas fa-phone mr-3"></i> +30 6949612978</p>
                 </div>
     
-                <!-- Στήλη: Newsletter -->
-                <div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Newsletter</h5>
-                    <form>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Το email σου" aria-label="Recipient's email">
-                            <button class="btn btn-info" type="submit">Εγγραφή</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <!-- Στήλη: Newsletter -->
+<div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
+    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Newsletter</h5>
+    <form id="newsletter-form">
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" id="newsletter-email" placeholder="Το email σου" aria-label="Recipient's email" required>
+            <button class="btn btn-info" type="submit">Εγγραφή</button>
+        </div>
+    </form>
+    <!-- Μήνυμα επιτυχίας ή αποτυχίας -->
+    <div id="newsletter-message" class="mt-2"></div>
+</div>
+
+<script>
+document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Αποφυγή ανανέωσης σελίδας
+    
+    let email = document.getElementById("newsletter-email").value;
+    let messageDiv = document.getElementById("newsletter-message");
+
+    if (!email) {
+        messageDiv.innerHTML = '<p class="text-danger">Παρακαλώ εισάγετε ένα έγκυρο email.</p>';
+        return;
+    }
+
+    // Mailchimp API URL (χρησιμοποίησε το δικό σου)
+    let mailchimpUrl = "https://anastasiadisxaristechnology.us12.list-manage.com/subscribe/post?u=2eaf8adc1a0f285673787b957&amp;id=0a4305bfea&amp;f_id=00f566e9f0";
+    
+    let formData = new FormData();
+    formData.append("EMAIL", email);
+
+    fetch(mailchimpUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    }).then(response => {
+        messageDiv.innerHTML = '<p class="text-success">Ευχαριστούμε για την εγγραφή! 🎉</p>';
+        document.getElementById("newsletter-form").reset();
+    }).catch(error => {
+        messageDiv.innerHTML = '<p class="text-danger">Κάτι πήγε στραβά! Δοκιμάστε ξανά.</p>';
+    });
+});
+</script>
+
     
             <!-- Κοινωνικά Δίκτυα -->
             <!-- Κοινωνικά Δίκτυα -->
