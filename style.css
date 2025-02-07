@@ -403,6 +403,10 @@ ul li {
     transition: all 0.3s ease-in-out;
 }
 
+main {
+    margin-top: 80px; /* Ίσο περίπου με το ύψος της navbar */
+}
+
 .navbar.scrolled {
     background: rgba(0, 0, 0, 1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -506,4 +510,34 @@ ul li {
         margin-top: 10px;
     }
 }
+
+.custom-list {
+    list-style: none; /* Αφαίρεση των προεπιλεγμένων bullets */
+    padding-left: 0; /* Μηδενικό αριστερό περιθώριο */
+}
+
+.custom-list li {
+    font-size: 18px; /* Μέγεθος κειμένου */
+    margin-bottom: 10px; /* Απόσταση μεταξύ των στοιχείων */
+}
+
+.custom-list li i {
+    color: #007bff; /* Χρώμα εικονιδίων */
+    margin-right: 8px; /* Απόσταση εικονιδίου από το κείμενο */
+    font-size: 20px; /* Μέγεθος εικονιδίου */
+}
+
+.separator {
+    height: 6px;
+    background: linear-gradient(to right, #ff8c00, #ff0080, #8000ff);
+    border-radius: 3px;
+    margin: 40px 0;
+    animation: gradientMove 3s infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
 
