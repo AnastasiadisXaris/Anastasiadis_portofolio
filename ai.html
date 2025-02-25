@@ -83,18 +83,101 @@
     </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">
-        <div class="container text-center">
-            <h5>© 2025 Αναστασιάδης Θεοχάρης. All rights reserved.</h5>
-            <div class="social-icons mt-3">
-                <a href="https://www.facebook.com/Mirmidonas" class="text-white me-4"><i class="fab fa-facebook fa-lg"></i></a>
-                <a href="https://www.instagram.com/_anastasiadisxaris/" class="text-white me-4"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="https://x.com/MmaAcademy2" class="text-white me-4"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="https://www.linkedin.com/in/theoxaris-anastasiadis-ba69a8121/" class="text-white me-4"><i class="fab fa-linkedin fa-lg"></i></a>
-                <a href="https://github.com/Xaris75" class="text-white me-4"><i class="fab fa-github fa-lg"></i></a>
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <!-- Στήλη: Πληροφορίες -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">ΑΝΑΣΤΑΣΙΑΔΗΣ ΘΕΟΧΑΡΗΣ</h5>
+                    <p>Εξερεύνησε τον κόσμο της Python, της Τεχνητής Νοημοσύνης, του Web Development και του Digital Marketing μέσα από το προσωπικό μου portfolio.</p>
+                </div>
+    
+                <!-- Στήλη: Γρήγορη Πλοήγηση -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">ΓΡΗΓΟΡΗ ΠΛΟΗΓΗΣΗ</h5>
+                    <p><a href="about.html" class="text-white text-decoration-none">Σχετικά με Εμένα</a></p>
+                    <p><a href="projects.html" class="text-white text-decoration-none">Projects</a></p>
+                    <p><a href="blog.html" class="text-white text-decoration-none">Blog</a></p>
+                    <p><a href="contact.html" class="text-white text-decoration-none">Επικοινωνία</a></p>
+                </div>
+    
+                <!-- Στήλη: Επικοινωνία -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">ΕΠΙΚΟΙΝΩΝΙΑ</h5>
+                    <p><i class="fas fa-home mr-3"></i> Κατερίνη - Πιερία, Ελλάδα</p>
+                    <p><i class="fas fa-envelope mr-3"></i> theoxarisanastasiadis9@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +30 6949612978</p>
+                </div>
+    
+                <!-- Στήλη: Newsletter -->
+<div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
+    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Newsletter</h5>
+    <form id="newsletter-form">
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" id="newsletter-email" placeholder="Το email σου" aria-label="Recipient's email" required>
+            <button class="btn btn-info" type="submit">Εγγραφή</button>
+        </div>
+    </form>
+    <!-- Μήνυμα επιτυχίας ή αποτυχίας -->
+    <div id="newsletter-message" class="mt-2"></div>
+</div>
+
+<script>
+document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Αποφυγή ανανέωσης σελίδας
+    
+    let email = document.getElementById("newsletter-email").value;
+    let messageDiv = document.getElementById("newsletter-message");
+
+    if (!email) {
+        messageDiv.innerHTML = '<p class="text-danger">Παρακαλώ εισάγετε ένα έγκυρο email.</p>';
+        return;
+    }
+
+    // Mailchimp API URL (χρησιμοποίησε το δικό σου)
+    let mailchimpUrl = "https://anastasiadisxaristechnology.us12.list-manage.com/subscribe/post-json?u=2eaf8adc1a0f285673787b957&id=0a4305bfea&c=?";
+    
+    let formData = new FormData();
+    formData.append("EMAIL", email);
+
+    fetch(mailchimpUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    }).then(response => {
+        messageDiv.innerHTML = '<p class="text-success">Ευχαριστούμε για την εγγραφή! 🎉</p>';
+        document.getElementById("newsletter-form").reset();
+    }).catch(error => {
+        messageDiv.innerHTML = '<p class="text-danger">Κάτι πήγε στραβά! Δοκιμάστε ξανά.</p>';
+    });
+});
+</script>
+
+            <!-- Κοινωνικά Δίκτυα -->
+            <div class="text-center mt-4">
+                <a href="https://www.facebook.com/Mirmidonas" class="social-btn facebook" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook fa-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/_anastasiadisxaris/" class="social-btn instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="https://x.com/MmaAcademy2" class="social-btn twitter" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/theoxaris-anastasiadis-ba69a8121/" class="social-btn linkedin" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://github.com/Xaris75" class="social-btn github" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+            </div>
+
+    
+            <!-- Υποσέλιδο -->
+            <div class="text-center py-3 border-top mt-4">
+                <p>© 2025 Αναστασιάδης Θεοχάρης. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
