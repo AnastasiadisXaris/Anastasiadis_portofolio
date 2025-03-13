@@ -738,3 +738,56 @@ main {
     transform: scale(1.2); /* Μεγαλώνει κατά 20% */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
 }
+
+.category {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category-title {
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.blog-post {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+/* Χρώματα κατηγοριών */
+.python { background: linear-gradient(45deg, #ff8c00, #ff5e00); }
+.ai { background: linear-gradient(45deg, #8a2be2, #ff1493); }
+.data-science { background: linear-gradient(45deg, #00c853, #00e676); }
+.web-development { background: linear-gradient(45deg, #1e88e5, #42a5f5); }
+.digital-marketing { background: linear-gradient(45deg, #d32f2f, #f44336); }
+
+.read-more {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
