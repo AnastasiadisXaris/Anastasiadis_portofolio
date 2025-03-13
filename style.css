@@ -776,11 +776,11 @@ main {
 }
 
 /* Χρώματα κατηγοριών */
-.python { background: linear-gradient(45deg, #ff8c00, #ff5e00); }
+.python { background: linear-gradient(45deg, #002fff, #ff5e00); }
 .ai { background: linear-gradient(45deg, #8a2be2, #ff1493); }
 .data-science { background: linear-gradient(45deg, #00c853, #00e676); }
 .web-development { background: linear-gradient(45deg, #1e88e5, #42a5f5); }
-.digital-marketing { background: linear-gradient(45deg, #d32f2f, #f44336); }
+.digital-marketing { background: linear-gradient(45deg, #45d32f, #f44336); }
 
 .read-more {
     color: #007bff;
