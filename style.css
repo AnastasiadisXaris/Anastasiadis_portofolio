@@ -54,15 +54,36 @@ body {
     margin-top: 5px;
 }
 
+.hero h1, .hero p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
 
 .hero {
     position: relative;
-    color: white;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: #E0FBFC;
+    background-color: #5C6B73;
+    animation: spin 2s linear infinite;
+    border-radius: 15px;
+    z-index: 1;
+
 }
 
-.hero h1, .hero p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+.hero .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-img {
+    max-width: 40%;  /* Προσαρμόζει την εικόνα στο 40% του πλάτους */
+    max-height: 150px; /* Ορίζει το μέγιστο ύψος */
+    object-fit: contain; /* Διατηρεί τις αναλογίες */
+    margin-bottom: 20px;
 }
 
 section h3 {
@@ -456,28 +477,6 @@ main {
     opacity: 1;
     transform: translateY(0);
 }
-.hero {
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    background-color: #eae2b7; /* Προαιρετικό */
-}
-
-.hero .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-img {
-    max-width: 40%;  /* Προσαρμόζει την εικόνα στο 40% του πλάτους */
-    max-height: 150px; /* Ορίζει το μέγιστο ύψος */
-    object-fit: contain; /* Διατηρεί τις αναλογίες */
-    margin-bottom: 20px;
-}
 
 .card {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -790,4 +789,35 @@ main {
 
 .read-more:hover {
     text-decoration: underline;
+}
+
+.aurora-text {
+    font-weight: bold;
+    font-size: 2.5rem;
+    background: linear-gradient(
+        45deg,
+        #00f5d4,
+        #9b5de5,
+        #00bbf9,
+        #fee440,
+        #00f5d4
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: auroraFlow 6s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Aurora flow animation */
+@keyframes auroraFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
