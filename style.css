@@ -830,6 +830,7 @@ main {
   background-color: #e9c46a;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  border-radius: 12px;
 }
 
 .scroll-content {
