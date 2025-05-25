@@ -838,9 +838,6 @@ main {
   animation: scroll-left 18s linear infinite;
 }
 
-.scroll-wrapper:hover .scroll-content {
-  animation-play-state: paused;
-}
 
 .scroll-item {
   flex: 0 0 auto;
