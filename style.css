@@ -822,3 +822,34 @@ main {
         background-position: 0% 50%;
     }
 }
+
+.scroll-wrapper {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll-left 20s linear infinite;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+/* Keyframes για αριστερή κύλιση */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
