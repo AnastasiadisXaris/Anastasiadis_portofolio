@@ -343,7 +343,7 @@ main {
 .footer-social a {
     display: inline-block;
     margin-right: 15px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #f8f9fa;
     transition: transform 0.3s ease, color 0.3s ease;
 }
