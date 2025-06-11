@@ -46,6 +46,7 @@
                                 <li><a class="dropdown-item" href="ai.html">Τεχνητή Νοημοσύνη</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Επικοινωνία</a></li>
                         <li class="nav-item">
@@ -254,6 +255,19 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
     });
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const currentPath = window.location.pathname;
+          const links = document.querySelectorAll(".navbar-nav .nav-link");
+        
+          links.forEach(link => {
+            const href = link.getAttribute("href");
+            if (currentPath.includes(href)) {
+              link.classList.add("active");
+            }
+          });
+        });
+        </script>
 
     <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 

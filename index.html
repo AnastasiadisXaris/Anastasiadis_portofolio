@@ -83,6 +83,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Αρχική</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">Κάποια στοιχεία για εμένα</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="sectionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -352,6 +353,32 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
     });
 });
 </script>
+
+<script>
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentPath = window.location.pathname;
+      const links = document.querySelectorAll(".navbar-nav .nav-link");
+    
+      links.forEach(link => {
+        const href = link.getAttribute("href");
+        if (currentPath.includes(href)) {
+          link.classList.add("active");
+        }
+      });
+    });
+    </script>
+    
 
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 
