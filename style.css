@@ -116,6 +116,7 @@ body {
     max-height: 300px; /* Ορίζει το μέγιστο ύψος 300px*/
     object-fit: contain; /* Διατηρεί τις αναλογίες */
     margin-bottom: 20px;
+    border-radius: 15%;
 }
 
 section h3 {
