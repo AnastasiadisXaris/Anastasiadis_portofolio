@@ -48,40 +48,53 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item">
+                            <button id="darkModeToggle" class="btn btn-outline-light ms-2" title="Toggle Dark Mode">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <h1>Contact Me</h1>
         <!-- Mailchimp Newsletter Signup Form -->
-        <div id="mc_embed_shell">
-            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-            <div id="mc_embed_signup">
-                <form action="https://anastasiadisxaristechnology.us12.list-manage.com/subscribe/post?u=2eaf8adc1a0f285673787b957&amp;id=0a4305bfea&amp;f_id=00f566e9f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                    <div id="mc_embed_signup_scroll">
-                        <h2>Καλωσήρθατε στην Κοινότητα μας</h2>
-                        <div class="mc-field-group">
-                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-FNAME">First Name</label>
-                            <input type="text" name="FNAME" class="text" id="mce-FNAME">
-                        </div>
-                        <div class="mc-field-group">
-                            <label for="mce-LNAME">Last Name</label>
-                            <input type="text" name="LNAME" class="text" id="mce-LNAME">
-                        </div>
-                        <div class="optionalParent">
-                            <div class="clear foot">
-                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+        <main class="container my-5 ">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <img src="./photos/card_logo.png" alt="Επικοινωνία" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mb-4">Επικοινώνησε Μαζί Μου</h1>
+                    <div id="mc_embed_shell">
+                        <form action="https://anastasiadisxaristechnology.us12.list-manage.com/subscribe/post?u=2eaf8adc1a0f285673787b957&amp;id=0a4305bfea&amp;f_id=00f566e9f0"
+                            method="post"
+                            id="mc-embedded-subscribe-form"
+                            name="mc-embedded-subscribe-form"
+                            class="validate"
+                            target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <div class="mb-3">
+                                    <label for="mce-EMAIL" class="form-label">Email *</label>
+                                    <input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mce-FNAME" class="form-label">Όνομα</label>
+                                    <input type="text" name="FNAME" class="form-control" id="mce-FNAME">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mce-LNAME" class="form-label">Επώνυμο</label>
+                                    <input type="text" name="LNAME" class="form-control" id="mce-LNAME">
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Εγγραφή</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
+        </main>
+        
             <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
             <script type="text/javascript">(function($) {
                 window.fnames = new Array(); window.ftypes = new Array();
@@ -163,5 +176,27 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("darkModeToggle");
+        const prefersDark = localStorage.getItem("dark-mode") === "enabled";
+    
+        if (prefersDark) {
+            document.body.classList.add("dark-mode");
+        }
+    
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            const enabled = document.body.classList.contains("dark-mode");
+            localStorage.setItem("dark-mode", enabled ? "enabled" : "disabled");
+    
+            toggleBtn.innerHTML = enabled 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+    });
+    </script>
+
 </body>
 </html>

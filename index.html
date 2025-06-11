@@ -98,6 +98,11 @@
                         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Επικοινωνία</a></li>
+                        <li class="nav-item">
+                            <button id="darkModeToggle" class="btn btn-outline-light ms-2" title="Toggle Dark Mode">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -107,7 +112,7 @@
     <main>
         <section class="hero">
             <div class="content">
-                <img src="./photos/portofolio (1).png" alt="Portfolio" class="hero-img">
+                <img src="./photos/Wall_logo.png" alt="Portfolio" class="hero-img">
                 <h1 class="aurora-text">Καλωσήρθατε στο Portfolio μου</h1>
                 <p class="animate__animated animate__fadeInUp"><b>Explore my work in Python, AI, Data Science, Web Development and Digital Marketing</b></p>
                 <a href="./projects.html" class="btn btn-primary btn-lg">Κάντε το πρώτο βήμα στον κόσμο της τεχνολογίας! </a>
@@ -117,32 +122,32 @@
         <section class="container my-5">
             <div class="row text-center">
                 <!-- Πρώτη Σειρά -->
-                <div class="col-md-4">
-                    <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                <div class="col-md-4 reveal">
+                    <i class="fas fa-code fa-3x text-primary mb-3 reveal"></i>
                     <h3>Python Programming</h3>
                     <p>Ανακαλύψτε το εκπαιδευτικό υλικό, διαδραστικά μαθήματα και περιβάλλον εξάσκησης για να βελτιώσετε τις δεξιότητές σας στην Python.</p>
                 </div>
-                <div class="col-md-4">
-                    <i class="fas fa-chart-bar fa-3x text-success mb-3"></i>
+                <div class="col-md-4 reveal">
+                    <i class="fas fa-chart-bar fa-3x text-success mb-3 reveal"></i>
                     <h3>Data Science</h3>
                     <p>Μάθετε πώς να αναλύετε τα δεδομένα, να δημιουργείτε οπτικοποιήσεις και να λαμβάνετε αποφάσεις βάσει δεδομένων.</p>
                 </div>
-                <div class="col-md-4">
-                    <i class="fas fa-brain fa-3x text-warning mb-3"></i>
+                <div class="col-md-4 reveal">
+                    <i class="fas fa-brain fa-3x text-warning mb-3 reveal"></i>
                     <h3>Artificial Intelligence</h3>
                     <p>Εξερευνήστε τη δύναμη της τεχνητής νοημοσύνης, από τη μηχανική μάθηση έως τα νευρωνικά δίκτυα.</p>
                 </div>
             </div>
         
             <!-- Δεύτερη Σειρά -->
-            <div class="row text-center mt-4">
+            <div class="row text-center mt-4 reveal">
                 <div class="col-md-6">
-                    <i class="fas fa-laptop-code fa-3x text-info mb-3"></i>
+                    <i class="fas fa-laptop-code fa-3x text-info mb-3 reveal"></i>
                     <h3>Web Development</h3>
                     <p>Μάθετε να δημιουργείτε δυναμικές και διαδραστικές ιστοσελίδες με HTML, CSS και JavaScript.</p>
                 </div>
                 <div class="col-md-6">
-                    <i class="fas fa-bullhorn fa-3x text-danger mb-3"></i>
+                    <i class="fas fa-bullhorn fa-3x text-danger mb-3 reveal"></i>
                     <h3>Digital Marketing</h3>
                     <p>Κατακτήστε στρατηγικές στο SEO, τα μέσα κοινωνικής δικτύωσης και τη διαδικτυακή διαφήμιση για να αυξήσετε την ψηφιακή σας παρουσία.</p>
                 </div>
@@ -306,6 +311,46 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
             reveal();
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function revealOnScroll() {
+                const elements = document.querySelectorAll(".reveal");
+                const windowHeight = window.innerHeight;
+    
+                elements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - 100) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+    
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Run on load
+        });
+    </script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("darkModeToggle");
+    const prefersDark = localStorage.getItem("dark-mode") === "enabled";
+
+    if (prefersDark) {
+        document.body.classList.add("dark-mode");
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const enabled = document.body.classList.contains("dark-mode");
+        localStorage.setItem("dark-mode", enabled ? "enabled" : "disabled");
+
+        toggleBtn.innerHTML = enabled 
+            ? '<i class="fas fa-sun"></i>' 
+            : '<i class="fas fa-moon"></i>';
+    });
+});
+</script>
 
 </body>
 </html>
