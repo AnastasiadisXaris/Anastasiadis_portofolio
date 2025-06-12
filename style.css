@@ -483,7 +483,6 @@ ul li {
     box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
 
-
 @keyframes pulseGlow {
     from {
         box-shadow: 0 0 5px #f12711;
@@ -492,7 +491,6 @@ ul li {
         box-shadow: 0 0 15px #f5af19;
     }
 }
-
 
 main {
     margin-top: 80px; /* Ίσο περίπου με το ύψος της navbar */

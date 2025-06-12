@@ -366,17 +366,24 @@ window.addEventListener("scroll", function () {
 </script>
 
 <script>
-const normalize = path => path.replace(/\/|\.html/g, '').toLowerCase();
-const current = normalize(window.location.pathname);
+document.addEventListener("DOMContentLoaded", () => {
+    const normalizePath = (path) => {
+        return path
+            .replace(/^\/|\/$/g, "")   // αφαιρεί αρχικά/τελικά slashes
+            .replace(/\.html$/, "")    // αφαιρεί ".html"
+            .toLowerCase();
+    };
 
-document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
-    const href = normalize(link.getAttribute("href"));
-    if (href === current) {
-        link.classList.add("active");
-    }
+    const currentPath = normalizePath(window.location.pathname);
+
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+        const href = normalizePath(link.getAttribute("href") || "");
+        if (href === currentPath || (href === "index" && currentPath === "")) {
+            link.classList.add("active");
+        }
+    });
 });
 </script>
-
     
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 
