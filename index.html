@@ -367,17 +367,25 @@ window.addEventListener("scroll", function () {
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const currentPath = window.location.pathname;
-      const links = document.querySelectorAll(".navbar-nav .nav-link");
+      const normalize = path =>
+        path.replace(/^\/|\/$/g, "")   // Αφαίρεσε αρχικά/τελικά /
+            .replace(/\.html$/, "")    // Αφαίρεσε .html
+            .toLowerCase();
     
-      links.forEach(link => {
-        const href = link.getAttribute("href");
-        if (currentPath.includes(href)) {
+      const current = normalize(window.location.pathname);
+    
+      document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+        const href = link.getAttribute("href") || "";
+        const hrefNormalized = normalize(href);
+    
+        if (hrefNormalized === current || (hrefNormalized === "index" && current === "")) {
           link.classList.add("active");
+        } else {
+          link.classList.remove("active");
         }
       });
     });
-</script>
+    </script>    
     
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 
