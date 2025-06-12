@@ -367,22 +367,22 @@ window.addEventListener("scroll", function () {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const normalizePath = (path) => {
-        return path
-            .replace(/^\/|\/$/g, "")   // αφαιρεί αρχικά/τελικά slashes
-            .replace(/\.html$/, "")    // αφαιρεί ".html"
-            .toLowerCase();
-    };
-
-    const currentPath = normalizePath(window.location.pathname);
-
+    const normalize = path =>
+      path.replace(/^\/|\/$/g, "")   // Αφαίρεσε slashes στην αρχή/τέλος
+          .replace(/\.html$/, "")    // Αφαίρεσε .html
+          .toLowerCase();
+  
+    const current = normalize(window.location.pathname);
+  
     document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
-        const href = normalizePath(link.getAttribute("href") || "");
-        if (href === currentPath || (href === "index" && currentPath === "")) {
-            link.classList.add("active");
-        }
+      const hrefNorm = normalize(link.getAttribute("href") || "");
+      if (hrefNorm === current || (hrefNorm === "index" && current === "")) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
     });
-});
+  });
 </script>
     
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
