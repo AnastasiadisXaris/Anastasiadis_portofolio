@@ -366,22 +366,14 @@ window.addEventListener("scroll", function () {
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const currentPath = window.location.pathname.replace(/\/$/, "").toLowerCase();
-    const links = document.querySelectorAll(".navbar-nav .nav-link");
+const normalize = path => path.replace(/\/|\.html/g, '').toLowerCase();
+const current = normalize(window.location.pathname);
 
-    links.forEach(link => {
-        const href = link.getAttribute("href").replace(/\/$/, "").toLowerCase();
-
-        // Για αρχική σελίδα
-        if ((href === "/index.html" || href === "") && (currentPath === "/" || currentPath === "/index.html")) {
-            link.classList.add("active");
-        }
-        // Για άλλες σελίδες
-        else if (href && currentPath.endsWith(href)) {
-            link.classList.add("active");
-        }
-    });
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+    const href = normalize(link.getAttribute("href"));
+    if (href === current) {
+        link.classList.add("active");
+    }
 });
 </script>
 
