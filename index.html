@@ -367,10 +367,15 @@ window.addEventListener("scroll", function () {
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const normalize = path =>
-        path.replace(/^\/|\/$/g, "")   // Αφαίρεσε αρχικά/τελικά /
-            .replace(/\.html$/, "")    // Αφαίρεσε .html
-            .toLowerCase();
+      const normalize = path => {
+        // Κανονικοποίηση path
+        return path
+          .toLowerCase()
+          .replace(/^\/|\/$/g, '')        // Αφαίρεση αρχικών/τελικών /
+          .replace(/\.html$/, '')         // Αφαίρεση .html
+          .replace(/^anastasiadisxaris\.github\.io\/Anastasiadis_portofolio/i, '') // αφαίρεση subpath GitHub Pages
+          .replace(/^anastasiadisxaris\.netlify\.app/i, ''); // αφαίρεση domain Netlify (προληπτικά)
+      };
     
       const current = normalize(window.location.pathname);
     
@@ -378,14 +383,18 @@ window.addEventListener("scroll", function () {
         const href = link.getAttribute("href") || "";
         const hrefNormalized = normalize(href);
     
-        if (hrefNormalized === current || (hrefNormalized === "index" && current === "")) {
+        if (
+          hrefNormalized === current ||
+          (hrefNormalized === "index" && (current === "" || current === "index"))
+        ) {
           link.classList.add("active");
         } else {
           link.classList.remove("active");
         }
       });
     });
-    </script>    
+    </script>
+       
     
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 
