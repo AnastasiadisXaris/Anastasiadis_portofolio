@@ -367,23 +367,17 @@ window.addEventListener("scroll", function () {
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const currentPath = window.location.pathname.replace(/\/$/, "").toLowerCase();
-        const links = document.querySelectorAll(".navbar-nav .nav-link");
+      const currentPath = window.location.pathname;
+      const links = document.querySelectorAll(".navbar-nav .nav-link");
     
-        links.forEach(link => {
-            const href = link.getAttribute("href").replace(/\/$/, "").toLowerCase();
-    
-            // Για αρχική σελίδα
-            if ((href === "/index.html" || href === "") && (currentPath === "/" || currentPath === "/index.html")) {
-                link.classList.add("active");
-            }
-            // Για άλλες σελίδες
-            else if (href && currentPath.endsWith(href)) {
-                link.classList.add("active");
-            }
-        });
+      links.forEach(link => {
+        const href = link.getAttribute("href");
+        if (currentPath.includes(href)) {
+          link.classList.add("active");
+        }
+      });
     });
-    </script>    
+    </script>
     
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 
