@@ -367,34 +367,17 @@ window.addEventListener("scroll", function () {
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const normalize = path => {
-        // Κανονικοποίηση path
-        return path
-          .toLowerCase()
-          .replace(/^\/|\/$/g, '')        // Αφαίρεση αρχικών/τελικών /
-          .replace(/\.html$/, '')         // Αφαίρεση .html
-          .replace(/^anastasiadisxaris\.github\.io\/Anastasiadis_portofolio/i, '') // αφαίρεση subpath GitHub Pages
-          .replace(/^anastasiadisxaris\.netlify\.app/i, ''); // αφαίρεση domain Netlify (προληπτικά)
-      };
+        const currentPath = window.location.pathname;
+        const links = document.querySelectorAll(".navbar-nav .nav-link");
     
-      const current = normalize(window.location.pathname);
-    
-      document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
-        const href = link.getAttribute("href") || "";
-        const hrefNormalized = normalize(href);
-    
-        if (
-          hrefNormalized === current ||
-          (hrefNormalized === "index" && (current === "" || current === "index"))
-        ) {
-          link.classList.add("active");
-        } else {
-          link.classList.remove("active");
-        }
-      });
+        links.forEach(link => {
+            const href = link.getAttribute("href");
+            if (currentPath.includes(href)) {
+                link.classList.add("active");
+            }
+        });
     });
-    </script>
-       
+</script>
     
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 
