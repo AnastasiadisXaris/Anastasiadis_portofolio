@@ -993,3 +993,42 @@ aside {
     top: 20px;
     height: fit-content;
 }
+
+/* Social bar για επάνω δεξιά - πιο μικρά και απλά εικονίδια */
+.topbar-social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #222;
+    padding: 5px 20px;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+.topbar-social a {
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.topbar-social a:hover {
+    color: #00bbf9; /* Ή διαφορετικό χρώμα ανάλογα με το brand */
+}
+
+@media (max-width: 768px) {
+    .topbar-social {
+      justify-content: center;
+      padding: 10px 5px;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.75rem;
+      background-color: #111; /* πιο σκούρο φόντο για διαφοροποίηση */
+    }
+  
+    .topbar-social a {
+      font-size: 14px;
+      margin: 0 4px;
+    }
+  }
+  

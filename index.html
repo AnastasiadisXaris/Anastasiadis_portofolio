@@ -72,44 +72,52 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center">
-                    <img src="./photos/machine-learning.png" alt="Logo" class="dark-mode-icon me-2" style="height: 40px;">
-                    <a class="navbar-brand mb-0" href="index.html">Αναστασιάδης Θεοχάρης</a>
-                </div>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home"></i>  Αρχική</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa fa-brain"></i> Σχετικά με εμένα</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="sectionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Ενότητες
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="sectionsDropdown">
-                                <li><a class="dropdown-item" href="python.html"><i class="fab fa-python"></i>   Python</a></li>
-                                <li><a class="dropdown-item" href="marketing.html"><i class="fa fa-bullhorn"></i>   Ψηφιακό Μάρκετινγκ</a></li>
-                                <li><a class="dropdown-item" href="data-science.html"><i class="fa fa-database"></i>   Επιστήμη των Δεδομένων</a></li>
-                                <li><a class="dropdown-item" href="ai.html"><i class="fa fa-robot"></i>   Τεχνητή Νοημοσύνη</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fa fa-code"> </i>  Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fa fa-blog"></i>  Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fa fa-envelope"></i>  Επικοινωνία</a></li>
-                        <li class="nav-item">
-                            <button id="darkModeToggle" class="btn btn-outline-light ms-2" title="Toggle Dark Mode">
-                                <i class="fas fa-moon"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Social Bar πάνω δεξιά -->
+    <div class="topbar-social">
+        <a href="https://www.facebook.com/Mirmidonas" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/_anastasiadisxaris/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/MmaAcademy2" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/theoxaris-anastasiadis-ba69a8121/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/AnastasiadisXaris" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.youtube.com/channel/UCkEfoBt3-PytDDySNzJ7COA" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <!-- ΚΥΡΙΟ ΜΕΝΟΥ ΠΛΟΗΓΗΣΗΣ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <img src="./photos/machine-learning.png" alt="Logo" class="dark-mode-icon me-2" style="height: 40px;">
+                <a class="navbar-brand mb-0" href="index.html">Αναστασιάδης Θεοχάρης</a>
             </div>
-        </nav>
-    </header>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home"></i> Αρχική</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa fa-brain"></i> Σχετικά με εμένα</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="sectionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ενότητες</a>
+                        <ul class="dropdown-menu" aria-labelledby="sectionsDropdown">
+                            <li><a class="dropdown-item" href="python.html"><i class="fab fa-python"></i> Python</a></li>
+                            <li><a class="dropdown-item" href="marketing.html"><i class="fa fa-bullhorn"></i> Ψηφιακό Μάρκετινγκ</a></li>
+                            <li><a class="dropdown-item" href="data-science.html"><i class="fa fa-database"></i> Επιστήμη των Δεδομένων</a></li>
+                            <li><a class="dropdown-item" href="ai.html"><i class="fa fa-robot"></i> Τεχνητή Νοημοσύνη</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fa fa-code"></i> Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fa fa-blog"></i> Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fa fa-envelope"></i> Επικοινωνία</a></li>
+                    <li class="nav-item">
+                        <button id="darkModeToggle" class="btn btn-outline-light ms-2" title="Toggle Dark Mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <main>
         <section class="hero">
