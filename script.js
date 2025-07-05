@@ -18,31 +18,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // script.js
-
-function loadBloggerPosts() {
-    const blogID = "443892277432523371";
-    const apiKey = "AIzaSyCMLzNxm7fU08dN7kZTupRV1IZjfU_Pqmk";
-    const maxPosts = 5;
+async function loadBloggerPosts() {
+    try {
+      const res = await fetch('/api/blog');
+      if (!res.ok) throw new Error('Failed to load posts');
+      const data = await res.json();
   
-    fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogID}/posts?key=${apiKey}&maxResults=${maxPosts}`)
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById("blog-posts");
-        if (!container) return;
-        let output = "<h3>📘 Πρόσφατα Άρθρα</h3><ul>";
-        data.items.forEach(post => {
-          output += `<li>
-            <a href="${post.url}" target="_blank">${post.title}</a>
-            <p>${post.content.substring(0, 150)}...</p>
-          </li>`;
-        });
-        output += "</ul>";
-        container.innerHTML = output;
-      })
-      .catch(err => {
-        console.error("Σφάλμα:", err);
+      // Κάνε εδώ render τα posts όπως θέλεις
+      console.log(data);
+  
+      // Παράδειγμα: εμφάνιση τίτλων σε λίστα
+      const list = document.getElementById('posts-list');
+      list.innerHTML = '';
+      data.items.forEach(post => {
+        const li = document.createElement('li');
+        li.textContent = post.title;
+        list.appendChild(li);
       });
+  
+    } catch (error) {
+      console.error(error);
+    }
   }
+  
+  document.addEventListener('DOMContentLoaded', loadBloggerPosts);
+  
   
   // Εκτελείται μόνο αν υπάρχει το div blog-posts στη σελίδα
   document.addEventListener("DOMContentLoaded", loadBloggerPosts);
