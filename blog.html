@@ -80,12 +80,8 @@
             <!-- Αριστερή Στήλη (Λειτουργικό περιεχόμενο) -->
             <aside class="col-lg-3 mb-4">
                 <div class="card shadow-sm p-3 mb-3">
-                <h5 class="text-info">📌 Κατηγορίες</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#python">Python</a></li>
-                        <li><a href="#ai">Τεχνητή Νοημοσύνη</a></li>
-                        <li><a href="#marketing">Ψηφιακό Μάρκετινγκ</a></li>
-                    </ul>
+                    <h5 class="text-info">🏷️ Ετικέτες</h5>
+                    <ul id="label-list" class="list-unstyled"></ul>
                 </div>
 
                 <div id="archive-sidebar" class="card shadow-sm p-3 mb-3">
@@ -101,52 +97,7 @@
 
             <!-- Δεξιά Στήλη (Άρθρα) -->
             <section class="col-lg-9 blog-posts">
-
-                <!-- Κατηγορία 1 -->
-                <div class="category" id="python">
-                    <h2 class="category-title python">Python</h2>
-                    <div class="blog-post">
-                        <h2><a href="https://anastasiadisxaris.blogspot.com/2025/02/python.html">Εισαγωγή στην Python για Αρχάριους</a></h2>
-                        <p class="blog-date">Posted on February 9, 2025</p>
-                        <p>Οδηγός για αρχάριους σχετικά με τις βασικές έννοιες και τη σύνταξη της Python.</p>
-                    <a href="https://anastasiadisxaris.blogspot.com/2025/02/python.html" class="read-more">Read more →</a>
-                    </div>
-                </div>
-
-                <!-- Κατηγορία 2 -->
-                <div class="category" id="ai">
-                    <h2 class="category-title ai">Τεχνητή Νοημοσύνη</h2>
-                    <div class="blog-post">
-                        <h2><a href="https://anastasiadisxaris.blogspot.com/2025/02/introduction-to-machine-learning-key.html">Εισαγωγή στη Μηχανική Μάθηση</a></h2>
-                        <p class="blog-date">Posted on February 7, 2025</p>
-                        <p>Οι βασικές αρχές της μηχανικής μάθησης και οι δημοφιλείς αλγόριθμοι.</p>
-                        <a href="https://anastasiadisxaris.blogspot.com/2025/02/introduction-to-machine-learning-key.html" class="read-more">Read more →</a>
-                    </div>
-                    <div class="blog-post">
-                    <h2><a href="https://anastasiadisxaris.blogspot.com/2025/02/2025.html">Οι Νέες Τάσεις στη Μηχανική Μάθηση για το 2025</a></h2>
-                    <p class="blog-date">Posted on February 14, 2025</p>
-                    <p>Πώς οι μεγάλες εταιρείες AI διαμορφώνουν το μέλλον της τεχνητής νοημοσύνης.</p>
-                    <a href="https://anastasiadisxaris.blogspot.com/2025/02/2025.html" class="read-more">Read more →</a>
-                </div>
-                </div>
-
-                <!-- Κατηγορία 3 -->
-                <div class="category" id="marketing">
-                    <h2 class="category-title digital-marketing">Ψηφιακό Μάρκετινγκ</h2>
-                    <div class="blog-post">
-                    <h2><a href="https://anastasiadisxaris.blogspot.com/2025/02/ai-vs-human-creativity-who-will.html">AI vs. Human Creativity: Who Will Dominate Content Marketing?</a></h2>
-                    <p class="blog-date">Posted on February 27, 2025</p>
-                    <p>Ποιος θα κερδίσει τη μάχη της δημιουργικότητας στο digital marketing;</p>
-                    <a href="https://anastasiadisxaris.blogspot.com/2025/02/ai-vs-human-creativity-who-will.html" class="read-more">Read more →</a>
-                </div>
-                <div class="blog-post">
-                    <h2><a href="https://anastasiadisxaris.blogspot.com/2025/03/trends-social-media-2025-digital.html">Trends στα Social Media για το 2025</a></h2>
-                    <p class="blog-date">Posted on February 27, 2025</p>
-                    <p>Οι πιο σημαντικές τάσεις στα social media και το digital marketing.</p>
-                    <a href="https://anastasiadisxaris.blogspot.com/2025/03/trends-social-media-2025-digital.html" class="read-more">Read more →</a>
-                </div>
-                </div>
-            </section>
+                <div id="blog-posts"></div>
 
     </main>
 <footer class="bg-dark text-white pt-5 pb-4">
@@ -303,24 +254,24 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
         
           displayPosts();
         
-          sidebar.querySelectorAll('.archive-link').forEach(link => {
+            sidebar.querySelectorAll('.archive-link').forEach(link => {
             link.addEventListener('click', e => {
-              e.preventDefault();
-              sidebar.querySelectorAll('.archive-link').forEach(l => l.classList.remove('active'));
-              link.classList.add('active');
-              displayPosts(link.dataset.month);
+                e.preventDefault();
+                sidebar.querySelectorAll('.archive-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                displayPosts(link.dataset.month);
             });
-          });
-        }
-        </script>
+        });
+    }
+    </script>
         
 
-  <script>
-  (function(){
+<script>
+    (function(){
     const script = document.createElement('script');
     script.src = "https://anastasiadisxaris.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadPosts&max-results=500";
     document.body.appendChild(script);
-  })();
+})();
 </script>
 
 <script>
@@ -331,12 +282,13 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
       links.forEach(link => {
         const href = link.getAttribute("href");
         if (currentPath.includes(href)) {
-          link.classList.add("active");
+            link.classList.add("active");
         }
-      });
+    });
     });
     </script>
 
     <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
