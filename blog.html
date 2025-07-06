@@ -134,6 +134,7 @@
     <!-- Μήνυμα επιτυχίας ή αποτυχίας -->
     <div id="newsletter-message" class="mt-2"></div>
 </div>
+
 </footer>
 
 <script>
@@ -170,8 +171,9 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
                 <p><strong>© 2025 Αναστασιάδης Θεοχάρης. All rights reserved.</strong></p>
             </div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -194,16 +196,16 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
     });
     </script>
 
-    <script>
+<script>
         function loadPosts(json) {
-          const entries = json.feed?.entry || [];
-          const postsContainer = document.getElementById("blog-posts");
-          const sidebar = document.getElementById("archive-sidebar");
-          sidebar.querySelectorAll('.archive-link')?.forEach(n => n.remove());
+            const entries = json.feed?.entry || [];
+            const postsContainer = document.getElementById("blog-posts");
+            const sidebar = document.getElementById("archive-sidebar");
+            sidebar.querySelectorAll('.archive-link')?.forEach(n => n.remove());
         
-          const monthsMap = new Map();
+            const monthsMap = new Map();
         
-          const postsData = entries.map(entry => {
+        const postsData = entries.map(entry => {
             const title = entry.title.$t;
             const link = entry.link.find(l => l.rel === "alternate").href;
             const dateObj = new Date(entry.published.$t);
@@ -213,52 +215,52 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
             const monthKey = `${year}-${month}`;
         
             if (!monthsMap.has(monthKey)) {
-              const monthName = dateObj.toLocaleString('el-GR', { month: 'long' });
-              monthsMap.set(monthKey, `${monthName} ${year}`);
+                const monthName = dateObj.toLocaleString('el-GR', { month: 'long' });
+                monthsMap.set(monthKey, `${monthName} ${year}`);
             }
         
             return { title, link, day, month, year, monthKey };
-          });
+        });
         
           // Sidebar Links
-          monthsMap.forEach((label, key) => {
+        monthsMap.forEach((label, key) => {
             const a = document.createElement('a');
             a.href = "#";
             a.className = "archive-link d-block mb-1";
             a.dataset.month = key;
             a.textContent = label;
             sidebar.appendChild(a);
-          });
+        });
         
           // Προβολή Άρθρων
-          function displayPosts(month = "all") {
+        function displayPosts(month = "all") {
             postsContainer.innerHTML = "";
             postsData
-              .filter(p => month === "all" || p.monthKey === month)
-              .sort((a, b) => new Date(b.year, b.month - 1, b.day) - new Date(a.year, a.month - 1, a.day))
-              .forEach(p => {
+                .filter(p => month === "all" || p.monthKey === month)
+                .sort((a, b) => new Date(b.year, b.month - 1, b.day) - new Date(a.year, a.month - 1, a.day))
+                .forEach(p => {
                 const div = document.createElement('div');
                 div.className = "blog-post card shadow-sm mb-4 animate__animated animate__fadeInUp";
                 const randomKeyword = ["technology", "programming", "ai", "laptop", "keyboard", "code", "data"][Math.floor(Math.random() * 7)];
                 div.innerHTML = `
-                  <div class="row g-0">
+                    <div class="row g-0">
                     <div class="col-md-4">
-                      <img src="https://source.unsplash.com/400x300/?${randomKeyword}" class="img-fluid rounded-start" alt="article image">
+                        <img src="https://picsum.photos/400/300/?${randomKeyword}&sig=${Math.random()}" class="img-fluid rounded-start" alt="article image">
                     </div>
                     <div class="col-md-8">
-                      <div class="card-body">
+                        <div class="card-body">
                         <h2 class="card-title"><a href="${p.link}" target="_blank">${p.title}</a></h2>
                         <p class="blog-date"><i class="far fa-calendar-alt"></i> ${p.day}/${p.month}/${p.year}</p>
-                      </div>
+                        </div>
                     </div>
-                  </div>
+                </div>
                 `;
                 postsContainer.appendChild(div);
             });
             
-          }
+        }
         
-          displayPosts();
+        displayPosts();
         
             sidebar.querySelectorAll('.archive-link').forEach(link => {
             link.addEventListener('click', e => {
@@ -273,11 +275,11 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
         
 
 <script>
-    (function(){
-    const script = document.createElement('script');
-    script.src = "https://anastasiadisxaris.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadPosts&max-results=500";
-    document.body.appendChild(script);
-})();
+        (function(){
+        const script = document.createElement('script');
+        script.src = "https://anastasiadisxaris.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadPosts&max-results=500";
+        document.body.appendChild(script);
+    })();
 </script>
 
 <script>
