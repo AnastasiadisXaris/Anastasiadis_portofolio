@@ -598,8 +598,8 @@ main {
 }
 
 .separator {
-    height: 6px;
-    background: linear-gradient(to right, #ff8c00, #ff0080, #8000ff);
+    height: 4px;
+    background: linear-gradient(to right, #002fff, #8000ff, #ff0080, #ff8c00);
     border-radius: 3px;
     margin: 40px 0;
     animation: gradientMove 3s infinite alternate;
@@ -923,7 +923,7 @@ body.dark-mode .btn-outline-light {
 }
 
 body.dark-mode .btn-outline-light:hover {
-    background-color: #fff;
+    background-color: yellow;
     color: #000;
 }
 

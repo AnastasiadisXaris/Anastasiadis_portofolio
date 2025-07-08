@@ -86,7 +86,7 @@
             <!-- Python Project -->
             <div class="project" data-category="python">
                 <h3>Εκπαιδευτική πλατφόρμα εκμάθησης της Python</h3>
-                <p>Η εκπαιδευτική πλατφόρμα της Pyhton  στοχεύει στην εκμάθηση της γλώσσας προγραμματισμού Python. Παρέχει χρήσιμους συνδέσμους προς επίσημους ιστότοπους, όπως το python.org, το W3Schools και το Stack Overflow, διευκολύνοντας την πρόσβαση σε εκπαιδευτικό υλικό και κοινότητες προγραμματιστών. Η πλατφόρμα απευθύνεται σε μαθητές Γυμνασίου, Λυκείου και Πανεπιστημίου, προσφέροντας πόρους προσαρμοσμένους στις ανάγκες κάθε επιπέδου.</p>
+                <p>Η εκπαιδευτική πλατφόρμα της Pyhton  στοχεύει στην εκμάθηση της γλώσσας προγραμματισμού Python. Παρέχει χρήσιμους συνδέσμους προς επίσημους ιστότοπους, όπως το python.org, το W3Schools και το Stack Overflow, διευκολύνοντας την πρόσβαση σε εκπαιδευτικό υλικό και κοινότητες προγραμματιστών.</p>
                 <a href="https://anastasiadisxaris.github.io/Learn_Python_app/" target="_blank" class="view-link">View my Platform →</a>
             </div>
 
@@ -96,14 +96,7 @@
                     <p>🔹 Περιγραφη: </p>
                     <p>Εδώ, ένα μοντέλο τεχνητής νοημοσύνης 🚀 διαβάζει το κείμενό σου και αποκαλύπτει το συναίσθημα που κρύβεται πίσω από τις λέξεις.
                         Γράψε ή επικόλλησε το κείμενό σου στο πλαίσιο, πάτησε το κουμπί Analyze και άφησε το AI να αξιολογήσει αν το μήνυμά σου είναι θετικό, αρνητικό ή ουδέτερο — μαζί με το ποσοστό βεβαιότητας.
-                        
-                        Γιατί να το δοκιμάσεις;
-                        
-                        Για να κατανοήσεις καλύτερα τον συναισθηματικό τόνο των κειμένων σου.
-                        
-                        Να πειραματιστείς με την ισχύ της Τεχνητής Νοημοσύνης σε πραγματικό χρόνο.
-                        
-                        Να νιώσεις την επόμενη γενιά εργαλείων ανάλυσης κειμένου ενσωματωμένη στο portfolio μου!<br></p>
+                        </p>
                 <a href="https://huggingface.co/spaces/Xaris75/sentiment_mini_app" target="_blank" class="view-link">In Huggingface →</a>
             </div>
 
@@ -111,9 +104,6 @@
             <div class="project" data-category="data-science">
                 <h3>Marketing Analytics Dashboard </h3>
                 <p>Αυτό το marketing dashboard επιτρέπει στους χρήστες να:<br> 📂 Να ανεβάζουν CSV αρχεία με δεδομένα marketing (πωλήσεις, επισκεψιμότητα, conversion rates) και αναλύστε τα με ευκολία.
-
-                    📋 Δημιούργία δυναμικών πινάκων για φιλτράρισμα & επεξεργασία δεδομένων, κάνοντας την ανάλυση πιο εύκολη και αποτελεσματική.<br>
-                    📈 Δημιουργία διαδραστικών γραφημάτων για οπτικοποίηση των τάσεων και την εξαγωγή πολύτιμων insights που βελτιώνουν τη στρατηγική.<br>
                     🎨 Μοντέρνο & Φιλικό UI για μια ομαλή & ευχάριστη εμπειρία χρήστη.
                     </p>
                 <a href="https://marketingdashboard-anastasiadis.streamlit.app/" target="_blank" class="view-link">View on Streamlit →</a>
@@ -246,15 +236,15 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-          const currentPath = window.location.pathname;
-          const links = document.querySelectorAll(".navbar-nav .nav-link");
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".navbar-nav .nav-link");
         
-          links.forEach(link => {
+        links.forEach(link => {
             const href = link.getAttribute("href");
             if (currentPath.includes(href)) {
-              link.classList.add("active");
-            }
-          });
+                link.classList.add("active");
+                }
+            });
         });
         </script>
 
