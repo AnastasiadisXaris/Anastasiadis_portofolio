@@ -120,6 +120,7 @@ body {
 
 section h3 {
     margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: 700;
 }
 
@@ -206,7 +207,7 @@ ul li {
     color: white;
     border: none;
     padding: 10px 15px;
-    margin: 5px;
+    margin-top: 40px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
