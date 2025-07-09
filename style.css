@@ -1,13 +1,28 @@
-.blog-posts {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 0 1em;
+
+.blog-post {
+    background: #ACB0BD;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 5px solid;
+    transition: all 0.3s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.blog-post:hover {
+    background: whitesmoke;
+    transform: translateX(5px);
 }
 
 .blog-post {
-    border-bottom: 1px solid #ddd;
+    background: #ACB0BD;
+    border-bottom: 1px solid #534141;
     margin-bottom: 1.5em;
     padding-bottom: 1em;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 0 1em;
 }
 
 .blog-post h2 {
@@ -70,7 +85,7 @@ body {
     justify-content: center;
     text-align: center;
     color: #f1f1f1;
-    background: linear-gradient(135deg, rgba(30, 30, 60, 0.85), rgba(80, 80, 120, 0.85));
+    background: linear-gradient(135deg, rgba(18, 18, 165, 0.85), rgba(80, 80, 120, 0.85));
     background-size: 200% 200%;
     animation: subtleFlow 15s ease-in-out infinite;
     border-radius: 15px;
@@ -100,22 +115,6 @@ body {
     0% { transform: scale(1) rotate(0deg); }
     50% { transform: scale(1.2) rotate(180deg); }
     100% { transform: scale(1) rotate(360deg); }
-}
-
-.hero .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-img {
-    max-width: 250px;  /* Προσαρμόζει την εικόνα στο 250% του πλάτους */
-    max-height: 250px; /* Ορίζει το μέγιστο ύψος 250px*/
-    object-fit: contain; /* Διατηρεί τις αναλογίες */
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border-radius: 10%;
-    animation: fadeInDown 1.5s ease-in-out;
 }
 
 section h3 {
@@ -164,6 +163,7 @@ ul li {
     border-radius: 5px;
     background-color: #f9f9f9;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .project h1{
@@ -334,6 +334,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .project:hover {
@@ -518,6 +519,7 @@ main {
 
 .card {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
@@ -634,6 +636,7 @@ main {
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease-in-out;
+
 }
 
 .project-img img {
@@ -641,6 +644,7 @@ main {
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Neon Glow Effect on Hover */
@@ -818,19 +822,7 @@ main {
     text-align: center;
 }
 
-.blog-post {
-    background: #ACB0BD;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 10px;
-    border-left: 5px solid;
-    transition: all 0.3s ease;
-}
 
-.blog-post:hover {
-    background: whitesmoke;
-    transform: translateX(5px);
-}
 
 /* Χρώματα κατηγοριών */
 .python { background: linear-gradient(45deg, #002fff, #ff5e00); }
@@ -950,8 +942,8 @@ aside .card {
     background: linear-gradient(to right, #e0f7fa, #ffffff);
     border-radius: 12px;
     border: 1px solid #b2ebf2;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 aside .card:hover {
@@ -1035,10 +1027,10 @@ aside {
 .blog-post {
     background-color: #fdfdfd;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.6s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .blog-post:hover {
@@ -1075,5 +1067,45 @@ aside {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 40px;
+    flex-wrap: wrap; /* για responsive */
+}
+
+.hero-img {
+    max-width: 400px;
+    width: 100%;
+    height: 500px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
     }
 }
