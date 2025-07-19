@@ -113,8 +113,17 @@
     </nav>
 </header>
 
-    <main>
-        <section class="hero">
+<main>
+
+    <section class="container my-5" id="carrd-popup-section">
+        <div class="text-center">
+            <h2 class="mb-4 text-info"><i class="fa fa-id-card-alt"></i> Η Carrd Σελίδα μου</h2>
+            <p class="mb-4">Πατήστε παρακάτω για να τη δείτε σε παράθυρο:</p>
+            <img src="./photos/Anastasiadis_cardd_site.png" alt="Carrd Preview" class="popup-trigger img-fluid shadow" style="cursor:pointer; max-width: 600px; border-radius: 10px;">
+        </div>
+    </section>
+
+    <section class="hero">
             <div class="content">
                 <img src="./photos/pc-keyboards.png" alt="Portfolio" class="hero-img">
                 <div class="hero-text">
@@ -364,6 +373,35 @@ window.addEventListener("scroll", function () {
     </script>
     
 <script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
+
+<div id="carrdPopup" class="carrd-popup">
+    <div class="carrd-popup-content">
+        <span class="close-popup" onclick="closeCarrdPopup()">&times;</span>
+        <iframe src="https://anastasiadis.carrd.co" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const popupTrigger = document.querySelector(".popup-trigger");
+        const popup = document.getElementById("carrdPopup");
+    
+        popupTrigger.addEventListener("click", () => {
+            popup.style.display = "block";
+        });
+    
+        window.addEventListener("click", (e) => {
+            if (e.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    });
+    
+    function closeCarrdPopup() {
+        document.getElementById("carrdPopup").style.display = "none";
+    }
+    </script>
+    
 
 </body>
 </html>
