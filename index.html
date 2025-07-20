@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Schema Markup for SEO -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -61,11 +61,12 @@
         "name": "Personal Portfolio"
         }
     }
-    </script>
+</script>
 
 </head>
 <body>
-    <header>
+
+<header>
     <!-- Social Bar πάνω δεξιά -->
     <div class="topbar-social">
         <a href="https://www.facebook.com/Mirmidonas" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -115,15 +116,7 @@
 
 <main>
 
-    <section class="container my-5" id="carrd-popup-section">
-        <div class="text-center">
-            <h2 class="mb-4 text-info"><i class="fa fa-id-card-alt"></i> Η Carrd Σελίδα μου</h2>
-            <p class="mb-4">Πατήστε παρακάτω για να τη δείτε σε παράθυρο:</p>
-            <img src="./photos/Anastasiadis_cardd_site.png" alt="Carrd Preview" class="popup-trigger img-fluid shadow" style="cursor:pointer; max-width: 600px; border-radius: 10px;">
-        </div>
-    </section>
-
-    <section class="hero">
+<section class="hero">
             <div class="content">
                 <img src="./photos/pc-keyboards.webp" alt="Portfolio" class="hero-img">
                 <div class="hero-text">
@@ -134,10 +127,10 @@
                     <a href="./projects.html" class="btn btn-primary btn-lg">Δείτε τα project μου.</a>
                 </div>
             </div>
-        </section>
+</section>
 
         
-        <section class="container my-5">
+<section class="container my-5">
             <div class="row text-center">
                 <!-- Πρώτη Σειρά -->
                 <div class="col-md-4 reveal">
@@ -170,11 +163,12 @@
                     <p>Κατακτήστε στρατηγικές στο SEO, τα μέσα κοινωνικής δικτύωσης και τη διαδικτυακή διαφήμιση για να αυξήσετε την ψηφιακή σας παρουσία.</p>
                 </div>
             </div>
-        </section>
+</section>
         
-    </main>
+</main>
 
-    <footer class="bg-dark text-white pt-5 pb-4">
+<footer class="bg-dark text-white pt-5 pb-4">
+
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
                 <!-- Στήλη: Πληροφορίες -->
@@ -202,48 +196,49 @@
                 </div>
     
     <!-- Στήλη: Newsletter -->
-<div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
-    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Newsletter</h5>
-    <form id="newsletter-form">
-        <div class="input-group mb-3">
-            <input type="email" class="form-control" id="newsletter-email" placeholder="Το email σου" aria-label="Recipient's email" required>
-            <button class="btn btn-info" type="submit">Εγγραφή</button>
-        </div>
-    </form>
+    <div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-info">Newsletter</h5>
+        <form id="newsletter-form">
+            <div class="input-group mb-3">
+                <input type="email" class="form-control" id="newsletter-email" placeholder="Το email σου" aria-label="Recipient's email" required>
+                <button class="btn btn-info" type="submit">Εγγραφή</button>
+            </div>
+        </form>
     <!-- Μήνυμα επιτυχίας ή αποτυχίας -->
-    <div id="newsletter-message" class="mt-2"></div>
-</div>
+        <div id="newsletter-message" class="mt-2"></div>
+    </div>
+
 </footer>
 
 <script>
-document.getElementById("newsletter-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Αποφυγή ανανέωσης σελίδας
+        document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Αποφυγή ανανέωσης σελίδας
     
-    let email = document.getElementById("newsletter-email").value;
-    let messageDiv = document.getElementById("newsletter-message");
+            let email = document.getElementById("newsletter-email").value;
+            let messageDiv = document.getElementById("newsletter-message");
 
-    if (!email) {
-        messageDiv.innerHTML = '<p class="text-danger">Παρακαλώ εισάγετε ένα έγκυρο email.</p>';
-        return;
-    }
+            if (!email) {
+                messageDiv.innerHTML = '<p class="text-danger">Παρακαλώ εισάγετε ένα έγκυρο email.</p>';
+                return;
+            }
 
     // Mailchimp API URL (χρησιμοποίησε το δικό σου)
-    let mailchimpUrl = "https://anastasiadisxaristechnology.us12.list-manage.com/subscribe/post?u=2eaf8adc1a0f285673787b957&amp;id=0a4305bfea&amp;f_id=00f566e9f0";
+            let mailchimpUrl = "https://anastasiadisxaristechnology.us12.list-manage.com/subscribe/post?u=2eaf8adc1a0f285673787b957&amp;id=0a4305bfea&amp;f_id=00f566e9f0";
     
-    let formData = new FormData();
-    formData.append("EMAIL", email);
+            let formData = new FormData();
+            formData.append("EMAIL", email);
 
-    fetch(mailchimpUrl, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
-    }).then(response => {
-        messageDiv.innerHTML = '<p class="text-success">Ευχαριστούμε για την εγγραφή! 🎉</p>';
-        document.getElementById("newsletter-form").reset();
-    }).catch(error => {
-        messageDiv.innerHTML = '<p class="text-danger">Κάτι πήγε στραβά! Δοκιμάστε ξανά.</p>';
-    });
-});
+            fetch(mailchimpUrl, {
+                method: "POST",
+                mode: "no-cors",
+                body: formData
+            }).then(response => {
+                messageDiv.innerHTML = '<p class="text-success">Ευχαριστούμε για την εγγραφή! 🎉</p>';
+                document.getElementById("newsletter-form").reset();
+            }).catch(error => {
+                messageDiv.innerHTML = '<p class="text-danger">Κάτι πήγε στραβά! Δοκιμάστε ξανά.</p>';
+            });
+        });
 </script>
             <!-- Υποσέλιδο -->
             <div class="text-center py-3 border-top mt-4">
@@ -252,8 +247,8 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
         window.addEventListener('scroll', function () {
             let navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -262,8 +257,9 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
                 navbar.classList.remove('scrolled');
             }
         });
-    </script>
-    <script>
+</script>
+
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             const navbar = document.querySelector(".navbar");
             window.addEventListener("scroll", function () {
@@ -288,8 +284,9 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
                 });
             });
         });
-    </script>
-    <script>
+</script>
+
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             function reveal() {
                 let elements = document.querySelectorAll(".reveal");
@@ -305,9 +302,9 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
             window.addEventListener("scroll", reveal);
             reveal();
         });
-    </script>
+</script>
 
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             function revealOnScroll() {
                 const elements = document.querySelectorAll(".reveal");
@@ -324,84 +321,55 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
             window.addEventListener("scroll", revealOnScroll);
             revealOnScroll(); // Run on load
         });
-    </script>
+</script>
     
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("darkModeToggle");
-    const prefersDark = localStorage.getItem("dark-mode") === "enabled";
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("darkModeToggle");
+        const prefersDark = localStorage.getItem("dark-mode") === "enabled";
 
-    if (prefersDark) {
-        document.body.classList.add("dark-mode");
-    }
+        if (prefersDark) {
+            document.body.classList.add("dark-mode");
+        }
 
-    toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const enabled = document.body.classList.contains("dark-mode");
-        localStorage.setItem("dark-mode", enabled ? "enabled" : "disabled");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            const enabled = document.body.classList.contains("dark-mode");
+            localStorage.setItem("dark-mode", enabled ? "enabled" : "disabled");
 
-        toggleBtn.innerHTML = enabled 
-            ? '<i class="fas fa-sun"></i>' 
-            : '<i class="fas fa-moon"></i>';
+            toggleBtn.innerHTML = enabled 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
     });
-});
 </script>
 
 <script>
-window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-});
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const currentPath = window.location.pathname;
-        const links = document.querySelectorAll(".navbar-nav .nav-link");
-    
-        links.forEach(link => {
-            const href = link.getAttribute("href");
-            if (currentPath.includes(href)) {
-        link.classList.add("active");
+    window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
         }
     });
-});
-    </script>
-    
-<script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
-
-<div id="carrdPopup" class="carrd-popup">
-    <div class="carrd-popup-content">
-        <span class="close-popup" onclick="closeCarrdPopup()">&times;</span>
-        <iframe src="https://anastasiadis.carrd.co" width="100%" height="100%" frameborder="0"></iframe>
-    </div>
-</div>
+</script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const popupTrigger = document.querySelector(".popup-trigger");
-        const popup = document.getElementById("carrdPopup");
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPath = window.location.pathname;
+            const links = document.querySelectorAll(".navbar-nav .nav-link");
     
-        popupTrigger.addEventListener("click", () => {
-            popup.style.display = "block";
-        });
-    
-        window.addEventListener("click", (e) => {
-            if (e.target === popup) {
-                popup.style.display = "none";
+            links.forEach(link => {
+                const href = link.getAttribute("href");
+                if (currentPath.includes(href)) {
+            link.classList.add("active");
             }
         });
     });
+</script>
     
-    function closeCarrdPopup() {
-        document.getElementById("carrdPopup").style.display = "none";
-    }
-    </script>
-    
+<script src="//code.tidio.co/0uq2bawueetlg6unxm8mk36hcbjzg55f.js" async></script>
 
 </body>
 </html>
