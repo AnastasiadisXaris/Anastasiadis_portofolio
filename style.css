@@ -95,7 +95,7 @@ body {
 }
 
 .hero-img {
-    width: 350px;
+    width: 500px;
     max-width: 100%;
     border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
@@ -1293,6 +1293,46 @@ aside {
 }
 .skill:hover img { transform: scale(1.2); }
 
+
+/* Ομοιόμορφο μέγεθος για SVG ώστε να ταιριάζουν με fa-3x */
+.skill-svg {
+    width: 3rem !important;
+    height: 3rem !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Για τα FontAwesome icons */
+.skill-icon {
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Hover effect τύπου SaaS (ανύψωση + glow) */
+.skill-icon:hover,
+.skill-svg:hover {
+    transform: translateY(-6px) scale(1.07);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}
+
+/* Χρωματισμοί όπως στα Bootstrap utility classes */
+.text-primary   { color: #0d6efd !important; }
+.text-warning   { color: #f0ad4e !important; }
+.text-danger    { color: #dc3545 !important; }
+.text-info      { color: #0dcaf0 !important; }
+.text-success   { color: #198754 !important; }
+.text-dark      { color: #212529 !important; }
+
+/* Κάνει τα SVG να "πιάνουν" το χρώμα των text-classes */
+.skill-svg [fill],
+.skill-svg polygon,
+.skill-svg path,
+.skill-svg rect {
+    fill: currentColor !important;
+}
+
+
 .quote {
     position: relative;
     height: 35vh;
@@ -1315,4 +1355,100 @@ aside {
     line-height: 1.4;    /* βελτιώνει την αναγνωσιμότητα */
 }
 
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(18, 18, 165, 0.85), rgba(80, 80, 120, 0.85));
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
 
+@media (max-width: 992px) {
+    .hero-content {
+        padding: 0 10px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@keyframes glowMove {
+    0% {
+        transform: translate(-20%, -20%);
+    }
+    50% {
+        transform: translate(20%, 20%);
+    }
+    100% {
+        transform: translate(-20%, -20%);
+    }
+}
+
+img.rounded-circle {
+    transition: transform 0.3s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.timeline {
+    border-radius: 10px;
+    margin: 30px 0;
+    padding-left: 40px;
+    border-left: 3px solid #0d6efd;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    color: #000;
+    
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -27px;
+    top: 0;
+    background: #0d6efd;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.timeline-content {
+    background: linear-gradient(135deg, rgba(18, 18, 165, 0.85), rgba(80, 80, 120, 0.85));
+    padding: 20px;
+    color: wheat;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.service-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, rgba(18, 18, 165, 0.85), rgba(80, 80, 120, 0.85));
+}
+.service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+header nav ul li a {
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    background: linear-gradient(90deg, #00f5d4, #9b5de5, #00bbf9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 8px;
+}
